@@ -31,4 +31,5 @@ body {
 
 .below .other #txt2 {
     font-family: poppins_bold, sans-serif;
+    transform: translateY(-20px);
 }
