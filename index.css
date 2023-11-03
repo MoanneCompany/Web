@@ -3,6 +3,11 @@
     src: url('Poppins-Regular.ttf');
 }
 
+@font-face {
+    font-family: poppins_bold;
+    src: url('Poppins-Bold.ttf');
+}
+
 body {
     background-color: white;
 }
@@ -23,5 +28,5 @@ body {
 }
 
 .below .other #txt2 {
-    font-family: poppins, sans-serif;
+    font-family: poppins_bold, sans-serif;
 }
