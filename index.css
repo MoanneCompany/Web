@@ -16,6 +16,7 @@ body {
     width: 100%;
     align-items: center;
     justify-content: center;
+    position: absolute;
 }
 
 .head #search {
@@ -25,6 +26,10 @@ body {
     border-radius: 50px;
 }
 
+.head #btn {
+    background-color: black;
+}
+
 .below {
     position: relative;
     
@@ -32,8 +37,8 @@ body {
 
 .below #img {
     background-image: url('23 Sem Título_20231102200744.png');
-    width: 300px;
-    height: 300px;
+    width: 30vh;
+    height: 30vh;
 }
 
 .below .other #txt {
