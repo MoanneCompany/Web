@@ -1,3 +1,15 @@
 body {
     background-color: white;
 }
+
+.below {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.below .img {
+    background-image: url('23 Sem Título_20231102200744.png');
+}
