@@ -21,6 +21,8 @@ body {
 
 .below #img {
     background-image: url('23 Sem Título_20231102200744.png');
+    width: 300px;
+    height: 300px;
 }
 
 .below .other #txt {
