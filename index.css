@@ -18,6 +18,14 @@ body {
 
 }
 
+.head {
+    align-items: center;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+    position: absolute;
+}
+
 .head .img {
     background-image: url('black-ic.png');
     width: 4vh;
