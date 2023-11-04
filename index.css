@@ -24,12 +24,12 @@ body {
 
 .head #txt {
     font-family: poppins_bold;
-    color: white;
+    color: black;
     font-size: 5vh;
 }
 
 .head #text {
     font-family: poppins;
-    color: white;
+    color: black;
     font-size: 5vh;
 }
