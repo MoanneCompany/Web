@@ -10,42 +10,14 @@
 
 body {
     background-color: white;
-}
-
-.head {
-    width: 100%;
     align-items: center;
+    justify-self: center;
     justify-content: center;
-    position: absolute;
-}
-
-.head #search {
-    width: 300px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50px;
-}
-
-.head #btn {
-    background-color: black;
-}
-
-.below {
     position: relative;
-    
 }
 
-.below #img {
+.img {
     background-image: url('23 Sem Título_20231102200744.png');
-    width: 30vh;
-    height: 30vh;
-}
-
-.below .other #txt {
-    font-family: poppins, sans-serif;
-}
-
-.below .other #txt2 {
-    font-family: poppins_bold, sans-serif;
-    transform: translateY(-70px);
+    width: 5vh;
+    height: 5vh;
 }
