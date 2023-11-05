@@ -478,27 +478,30 @@
 										sim = true;
 									}
 	                      		} else if (navigator.language === "zh-tw") {
-									if (confirm('Deseja criar uma nova conta com o nome de "' + user.value + '"?')) {
+									if (confirm('您想建立一個名為「' + user.value + '」的新帳戶嗎？')) {
 										sim = true;
 									}
 	                      		} else if (lang === "ko") {
-									if (confirm('Deseja criar uma nova conta com o nome de "' + user.value + '"?')) {
+									if (confirm('"' + user.value + '"라는 이름으로 새 계정을 만드셨나요?')) {
 										sim = true;
 									}
 	                    		} else {
-									if (confirm('Deseja criar uma nova conta com o nome de "' + user.value + '"?')) {
+									if (confirm('Do you want to create a new account with the name "' + user.value + '"?')) {
 										sim = true;
 									}
 	                    		}
-					  			const x = data.x;
-					  			x.push(user.value);
-					  			const userJSON = {
-					  				"a": {
-					  					"a1": user.value,
-					  					"a2": pass.value
-					  				}
-					  			};
 
+								if (sim) {
+									const x = data.x;
+									x.push(user.value);
+									const userJSON = {
+										"a": {
+											"a1": user.value,
+											"a2": pass.value
+										}
+									};
+								}
+					  			
 
 					  		}
 					  })
