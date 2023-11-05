@@ -493,6 +493,7 @@
 
 								if (sim) {
 									const x = data.x;
+									const url = 'https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json';
 									x.push(user.value);
 									const userJSON = {
 										"a": {
@@ -500,6 +501,14 @@
 											"a2": pass.value
 										}
 									};
+
+									try {
+										const rs = await fetch(url);
+										const current = await rs.json();
+										current.x = x;
+
+										const updateData = 
+									}
 								}
 					  			
 
