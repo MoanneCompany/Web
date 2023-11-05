@@ -62,7 +62,7 @@
 	    	font-family: poppins_light;
 	    }
 	    
-	    .log {
+	    #log {
 	    	width: 380px;
 	    	display: table-cell;
 	    	align-items: center;
@@ -71,7 +71,7 @@
 	    	transform: translateY(-15px);
 	    }
 	    
-	    .log #user {
+	    #log #user {
 	    	width: 380px;
 	    	height: 45px;
 	    	background-color: black;
@@ -83,7 +83,7 @@
 	    	color: white;
 	    }
 	    
-	    .log #pass {
+	    #log #pass {
 	    	margin-top: 19px;
 	    	width: 380px;
 	    	font-size: 15px;
@@ -97,11 +97,11 @@
 	    	transform: translateY(-10px);
 	    }
 	    
-	    .log #user:placeholder .log #pass:placeholder {
+	    #log #user:placeholder #log #pass:placeholder {
 	    	color: #c0c0c0;
 	    }
 	    
-	    .log #submit {
+	    #log #submit {
 	    	width: 180px;
 	    	height: 40px;
 	    	border-radius: 17px;
@@ -155,7 +155,7 @@
 	    	<img id="head" src="moanne.png">
 	    	<h1 id="moanne">Moanne</h1>
 	    	<h1 id="text">Start now</h1>
-	    	<div class="log">
+	    	<div id="log">
 	    		<input placeholder="User" id="user" type="text">
 	    		<h6 id="error_user">teste</h6>
 	    		<input placeholder="Password" id="pass" type="password">
@@ -175,7 +175,7 @@
 		    var errorUser = document.getElementById("error_user");
 		    var errorPass = document.getElementById("error_pass");
 			var img = document.getElementById("head");
-			var login = document.getElementsByClassName('log');
+			var login = document.getElementById('log');
 		    var userIn = false;
 		    var passIn = false;
 		    var password = 0;
@@ -194,7 +194,7 @@
 				start.style.fontSize = '12px';
 				text.style.fontSize = '6px';
 				login.style.margin = '0';
-				login.style.transform = 'translateY(100px)';
+				login.style.transform = 'translate-y(-100px)';
 				btn.style.width = '100px';
 				btn.style.height = '25px';
 				btn.style.fontSize = '13px';
