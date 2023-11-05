@@ -175,6 +175,7 @@
 		    var errorUser = document.getElementById("error_user");
 		    var errorPass = document.getElementById("error_pass");
 			var img = document.getElementById("head");
+			var login = document.getElementsByClassName('log');
 		    var userIn = false;
 		    var passIn = false;
 		    var password = 0;
@@ -192,6 +193,8 @@
 				moanne.style.fontSize = '19px';
 				start.style.fontSize = '10px';
 				text.style.fontSize = '6px';
+				login.style.margin = '0';
+				login.style.transform = 'translate-y(-30px)';
 			}
 		    
 		    if (navigator.language.includes("-")) {
