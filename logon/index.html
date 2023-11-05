@@ -32,7 +32,7 @@
 	    	background-image: url('bg.png');
 	    }
 	    
-	    .h {
+	    #h {
 	    	display: table-cell;
 	    	align-items: center;
 	    	text-align: center;
@@ -151,7 +151,7 @@
 	  </style>
 	</head>
 	<body>
-	    <div class="h">
+	    <div id="h">
 	    	<img id="head" src="moanne.png">
 	    	<h1 id="moanne">Moanne</h1>
 	    	<h1 id="text">Start now</h1>
@@ -175,7 +175,7 @@
 		    var errorUser = document.getElementById("error_user");
 		    var errorPass = document.getElementById("error_pass");
 			var img = document.getElementById("head");
-			var login = document.getElementById('log');
+			var h = document.getElementById('h');
 		    var userIn = false;
 		    var passIn = false;
 		    var password = 0;
@@ -192,14 +192,14 @@
 				img.style.height = '85px';
 				moanne.style.fontSize = '19px';
 				start.style.fontSize = '12px';
-				text.style.fontSize = '6px';
-				login.style.margin = '0';
-				login.style.transform = 'translateY(-100px)';
+				text.style.fontSize = '9px';
+				h.style.marginTop = '10%';
 				btn.style.width = '100px';
 				btn.style.height = '25px';
 				btn.style.fontSize = '13px';
-				errorPass.style.fontSize = '6px';
-				errorUser.style.fontSize = '6px';
+				errorPass.style.fontSize = '9px';
+				errorUser.style.fontSize = '9px';
+				errorPass.style.transform = 'translateX()'
 			}
 		    
 		    if (navigator.language.includes("-")) {
