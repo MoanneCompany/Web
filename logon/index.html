@@ -9,19 +9,19 @@
 	  	@font-face {
 	  		font-family: poppins;
 	  		font-weight: normal;
-	  		src: url('Poppins-Regular.ttf');
+	  		src: url('/web/Poppins-Regular.ttf');
 	  	}
 	  	
 	 	@font-face {
 	  		font-family: poppins_semi;
 	  		font-weight: normal;
-	  		src: url('Poppins-SemiBold.ttf');
+	  		src: url('/web/Poppins-SemiBold.ttf');
 	  	}
 	  	
 	  	@font-face {
 	  		font-family: poppins_light;
 	  		font-weight: normal;
-	  		src: url('Poppins-Light.ttf');
+	  		src: url('/web/Poppins-Light.ttf');
 	  	}
 	  
 	    body {
@@ -178,6 +178,9 @@
 		    var password = 0;
 		    var lang;
 		    
+			if (mobile_check() !== true) {
+				
+			}
 		    
 		    if (navigator.language.includes("-")) {
 		    	lang = navigator.language.split("-")[0];
@@ -451,6 +454,20 @@
 		    	}
 		    });
 		});
+
+		function mobile_check() {
+			if (navigator.userAgent.match(/Android/i)
+			|| navigator.userAgent.match(/webOS/i)
+		    || navigator.userAgent.match(/iPhone/i)
+			|| navigator.userAgent.match(/iPad/i)
+			|| navigator.userAgent.match(/iPod/i)
+			|| navigator.userAgent.match(/BlackBerry/i)
+			|| navigator.userAgent.match(/Windows Phone/i)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	</script>
 	</body>
 </html>
