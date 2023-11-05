@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('logged') === null) {
-        this.location.assign('/logon/index.html');
+        location.assign('MoanneCompany/web/logon/index.html');
     }
 
     
