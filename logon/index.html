@@ -554,9 +554,8 @@
 
 								if (sim) {
 									console.log(dados.x);
-									const x = dados.x;
 									const url = 'https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json';
-									x.push(user.value);
+									dados.x.push(user.value);
 									const userJSON = {
 										"a": {
 											"a1": user.value,
@@ -564,22 +563,29 @@
 										}
 									};
 
-									try {
-										const rs = await fetch(url);
-										const current = await rs.json();
-										current.x = x;
-
-										var updateData = JSON.stringify(current);
-
-										const updateResponse = await fetch(url, {
+									const updateResponse = {
 											method: "PUT",
-											body: updateData,
 											headers: {
+											    "Authorization": "token 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",
 												"ContentType": "application/json",
 											},
-										});
+											body: JSON.stringify(userJSON)
+										};
 
-										if (updateResponse === 200) {
+										const updateResponse2 = {
+											method: "PUT",
+											headers: {
+											    "Authorization": "token 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",
+												"ContentType": "application/json",
+											},
+											body: JSON.stringify(dados)
+										};
+
+
+									try {
+										const rs = await fetch("https://api.github.com/repos/moannecompany/web/contents/2x/" + user.value + ".json", updateResponse);
+										
+										if (rs.status === 200) {
 											console.log('S');
 										} else {
 											console.error('N');
@@ -589,18 +595,9 @@
 									}
 
 									try {
-										var uri = "https://raw.githubusercontent.com/MoanneCompany/web/main/2x/" + user.value + ".json";
-
-										var json = JSON.stringify(userJSON);
-										const updateResponse = await fetch(uri, {
-											method: "POST",
-											body: json,
-											headers: {
-												"ContentType": "application/json",
-											},
-										});
-
-										if (updateResponse === 200) {
+										const rs2 = await fetch("https://api.github.com/repos/moannecompany/web/contents/1x/a.json", updateResponse2);
+										
+										if (rs2.status === 200) {
 											console.log('S');
 										} else {
 											console.error('N');
@@ -608,6 +605,7 @@
 									} catch (error) {
 										console.error('E');
 									}
+
 								}
 		}
 	</script>
