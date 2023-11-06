@@ -168,14 +168,14 @@
 	    </div>
 	    <script>
 		const dados = null;
+		var user = document.getElementById("user");
+	    var pass = document.getElementById("pass");
 
 		$(document).ready(function() {
 			var text = document.getElementById("text2");
 			var start = document.getElementById("text");
 		    var btn = document.getElementById("submit");
 		    var moanne = document.getElementById("moanne");
-		    var user = document.getElementById("user");
-		    var pass = document.getElementById("pass");
 		    var errorUser = document.getElementById("error_user");
 		    var errorPass = document.getElementById("error_pass");
 			var img = document.getElementById("head");
@@ -569,11 +569,32 @@
 										const current = await rs.json();
 										current.x = x;
 
-										const updateData = JSON.stringify(current, null, 2);
+										var updateData = JSON.stringify(current);
 
 										const updateResponse = await fetch(url, {
 											method: "PUT",
 											body: updateData,
+											headers: {
+												"ContentType": "application/json",
+											},
+										});
+
+										if (updateResponse === 200) {
+											console.log('S');
+										} else {
+											console.error('N');
+										}
+									} catch (error) {
+										console.error('E');
+									}
+
+									try {
+										var uri = "https://raw.githubusercontent.com/MoanneCompany/web/main/2x/" + user.value + ".json";
+
+										var json = JSON.stringify(userJSON);
+										const updateResponse = await fetch(uri, {
+											method: "POST",
+											body: json,
 											headers: {
 												"ContentType": "application/json",
 											},
