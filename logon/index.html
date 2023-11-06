@@ -507,7 +507,23 @@
 										const current = await rs.json();
 										current.x = x;
 
-										const updateData = 
+										const updateData = JSON.stringify(current, null, 2);
+
+										const updateResponse = await fetch(url, {
+											method: "PUT",
+											body: updateData,
+											headers: {
+												"ContentType": "application/json",
+											},
+										});
+
+										if (updateResponse === 200) {
+											console.log('S');
+										} else {
+											console.log('N');
+										}
+									} catch (error) {
+										console.log('E');
 									}
 								}
 					  			
