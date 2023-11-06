@@ -419,7 +419,11 @@
 					  			fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/2x/' + user.value + '.json')
 					  			.then(response => response.json())
 					  			.then(d => {
-					  				fetch2();
+									if (d.a.a2 === pass.value) {
+										console.log("senha correta");
+									} else {
+										fetch2();
+									}
 					  			})
 					  			.catch(error => {
 					  				
@@ -434,9 +438,7 @@
 		}
 
 		async function fetch2() {
-			if (d.a.a2 === pass.value) {
-					  					console.log("senha correta");
-					  				} else {
+			
 					  					password++;
 					  					passIn = true;
 					  					errorPass.style.visibility = "visible";
@@ -491,8 +493,7 @@
 	                    		    		} else {
 	                    		    		    errorPass.innerHTML = "Incorrect password.";
 	                    		    		}
-					  					}
-					  				}
+										}
 		}
 
 		async function fetch3() {
@@ -503,7 +504,7 @@
 		    } else {
 		    	lang = navigator.language;
 		    }
-			
+
 			var sim = false;
 
 								if (lang === "pt") {
