@@ -167,6 +167,8 @@
 	    	<h4 id="text2">Once logged in, your account will remain saved on that device.</h4>
 	    </div>
 	    <script>
+		const dados = null;
+
 		$(document).ready(function() {
 			var text = document.getElementById("text2");
 			var start = document.getElementById("text");
@@ -415,6 +417,7 @@
 			fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
 			.then(response => response.json())
 					  .then(data => {
+						    dados = data;
 					  		if (data.x.includes(user.value)) {
 					  			fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/2x/' + user.value + '.json')
 					  			.then(response => response.json())
@@ -550,7 +553,7 @@
 	                    		}
 
 								if (sim) {
-									const x = data.x;
+									const x = dados.x;
 									const url = 'https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json';
 									x.push(user.value);
 									const userJSON = {
