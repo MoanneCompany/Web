@@ -376,14 +376,63 @@
 		    		    errorUser.innerHTML = "Fill in this field.";
 		    		}
 		    	} else {
-			    	fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
-					  .then(response => response.json())
+			    	fetchData();
+		    	}
+		    });
+		    
+		    user.addEventListener("input", function() {
+		    	if (userIn) {
+		    		errorUser.style.visibility = "hidden";
+		    		userIn = false;
+		    	}
+		    });
+		    
+		    pass.addEventListener("input", function() {
+		    	if (passIn) {
+		    		errorPass.style.visibility = "hidden";
+		    		passIn = false;
+		    	}
+		    });
+		});
+
+		function mobile_check() {
+			if (navigator.userAgent.match(/Android/i)
+			|| navigator.userAgent.match(/webOS/i)
+		    || navigator.userAgent.match(/iPhone/i)
+			|| navigator.userAgent.match(/iPad/i)
+			|| navigator.userAgent.match(/iPod/i)
+			|| navigator.userAgent.match(/BlackBerry/i)
+			|| navigator.userAgent.match(/Windows Phone/i)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		async function fetchData() {
+			fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
+			.then(response => response.json())
 					  .then(data => {
 					  		if (data.x.includes(user.value)) {
 					  			fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/2x/' + user.value + '.json')
 					  			.then(response => response.json())
 					  			.then(d => {
-					  				if (d.a.a2 === pass.value) {
+					  				fetch2();
+					  			})
+					  			.catch(error => {
+					  				
+					  			});
+					  		} else {
+								fetch3();
+					  		}
+					  })
+					  .catch(error => {
+					  		
+					  });
+		}
+
+		async function fetch2() {
+			if (d.a.a2 === pass.value) {
 					  					console.log("senha correta");
 					  				} else {
 					  					password++;
@@ -442,12 +491,10 @@
 	                    		    		}
 					  					}
 					  				}
-					  			})
-					  			.catch(error => {
-					  				
-					  			});
-					  		} else {
-								var sim = false;
+		}
+
+		async function fetch3() {
+			var sim = false;
 
 								if (lang === "pt") {
 	                    			if (confirm('Deseja criar uma nova conta com o nome "' + user.value + '"?')) {
@@ -526,43 +573,6 @@
 										console.log('E');
 									}
 								}
-					  			
-
-					  		}
-					  })
-					  .catch(error => {
-					  		
-					  });
-		    	}
-		    });
-		    
-		    user.addEventListener("input", function() {
-		    	if (userIn) {
-		    		errorUser.style.visibility = "hidden";
-		    		userIn = false;
-		    	}
-		    });
-		    
-		    pass.addEventListener("input", function() {
-		    	if (passIn) {
-		    		errorPass.style.visibility = "hidden";
-		    		passIn = false;
-		    	}
-		    });
-		});
-
-		function mobile_check() {
-			if (navigator.userAgent.match(/Android/i)
-			|| navigator.userAgent.match(/webOS/i)
-		    || navigator.userAgent.match(/iPhone/i)
-			|| navigator.userAgent.match(/iPad/i)
-			|| navigator.userAgent.match(/iPod/i)
-			|| navigator.userAgent.match(/BlackBerry/i)
-			|| navigator.userAgent.match(/Windows Phone/i)) {
-				return true;
-			} else {
-				return false;
-			}
 		}
 	</script>
 	</body>
