@@ -496,6 +496,14 @@
 		}
 
 		async function fetch3() {
+			var lang;
+
+			if (navigator.language.includes("-")) {
+		    	lang = navigator.language.split("-")[0];
+		    } else {
+		    	lang = navigator.language;
+		    }
+			
 			var sim = false;
 
 								if (lang === "pt") {
