@@ -1,3 +1,4 @@
+const mysql = require("mysql2");
 const dados = null;
 var user = document.getElementById("user");
 var pass = document.getElementById("pass");
