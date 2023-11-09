@@ -263,7 +263,7 @@ async function fetchData() {
 		console.log('Conexão com o MySQL estabelecida com sucesso!');
 
 		const username = user.value;
-		const query = ´SELECT * FROM ´
+		
 		// Agora você pode executar consultas SQL e interagir com o banco de dados MySQL.
 	});
 
