@@ -246,6 +246,24 @@ function mobile_check() {
 }
 
 async function fetchData() {
+	const connection = mysql.createConnection({
+		host: 'danrley-Inspiron-15-3520',
+		user: 'root',
+		password: '200915',
+		database: 'moanne_users'
+	});
+
+	connection.connect((err) => {
+		if (err) {
+			console.error('Erro ao conectar ao MySQL:', err);
+			return;
+		} else {
+			console.log('Conexão com o MySQL estabelecida com sucesso!');
+			
+		}
+		// Agora você pode executar consultas SQL e interagir com o banco de dados MySQL.
+	});
+
 	/*fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
 		.then(response => response.json())
 		.then(data => {
