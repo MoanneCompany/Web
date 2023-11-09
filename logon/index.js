@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+const User = require('./models/Users');
 
 const dados = null;
 var user = document.getElementById("user");
