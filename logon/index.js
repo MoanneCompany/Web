@@ -257,10 +257,11 @@ async function fetchData() {
 		if (err) {
 			console.error('Erro ao conectar ao MySQL:', err);
 			return;
-		} else {
-			console.log('Conexão com o MySQL estabelecida com sucesso!');
-			
 		}
+		console.log('Conexão com o MySQL estabelecida com sucesso!');
+
+		const username = user.value;
+		const query = ´SELECT * FROM ´
 		// Agora você pode executar consultas SQL e interagir com o banco de dados MySQL.
 	});
 
