@@ -21,3 +21,7 @@ const User = db.define('users', {
         allowNull: false
     }
 });
+
+User.sync();
+
+module.exports = User;
