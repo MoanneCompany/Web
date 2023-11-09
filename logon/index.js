@@ -246,7 +246,7 @@ function mobile_check() {
 }
 
 async function fetchData() {
-	fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
+	/*fetch('https://raw.githubusercontent.com/MoanneCompany/web/main/1x/a.json')
 		.then(response => response.json())
 		.then(data => {
 			dados = data;
@@ -269,7 +269,7 @@ async function fetchData() {
 		})
 		.catch(error => {
 
-		});
+		});*/
 }
 
 async function fetch2() {
