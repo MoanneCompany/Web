@@ -5,4 +5,9 @@ const sequelize = new Sequelize(moanne_users, 'root', 'Moanne1315114145031513161
 	dialect: 'mysql'
 });
 
+sequelize.authenticate()
+.then(() => {
+    console.log('sequile = SUCCESS');
+});
+
 module.exports = sequelize;
