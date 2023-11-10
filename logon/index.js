@@ -223,7 +223,7 @@ $(document).ready(function () {
 						errorUser.innerHTML = "Fill in this field.";
 						errorPass.innerHTML = "Fill in this field.";
 					}
-				} else {
+				} else if (user.value === ""){
 					errorUser.style.visibility = "visible";
 					userIn = true;
 					if (lang === "pt") {
@@ -248,6 +248,8 @@ $(document).ready(function () {
 					} else {
 						errorUser.innerHTML = "Fill in this field.";
 					}
+				} else {
+					
 				}
 
 			}
