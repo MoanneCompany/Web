@@ -249,7 +249,8 @@ $(document).ready(function () {
 						errorUser.innerHTML = "Fill in this field.";
 					}
 				} else {
-					
+					pass.style.display = 'flex';
+					pass.style.visibility = 'visible';
 				}
 
 			}
