@@ -31,7 +31,7 @@ $(document).ready(function () {
 		moanne.style.fontSize = '19px';
 		start.style.fontSize = '12px';
 		text.style.fontSize = '9px';
-		h.style.margin = '0px';
+		h.style.marginTop = '0';
 		btn.style.width = '150px';
 		btn.style.height = '27px';
 		btn.style.fontSize = '11px';
