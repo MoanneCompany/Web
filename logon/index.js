@@ -21,7 +21,8 @@ $(document).ready(function () {
 	var lang;
 
 	if (!mobile_check()) {
-		body.style.alignItems = ''
+		body.style.alignItems = 'top';
+		body.style.justifyContent = 'top';
 		user.style.width = '300px';
 		user.style.height = '30px';
 		user.style.fontSize = '13px';
