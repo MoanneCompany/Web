@@ -32,6 +32,7 @@ $(document).ready(function () {
 		start.style.fontSize = '12px';
 		text.style.fontSize = '9px';
 		h.style.marginTop = '0';
+		h.style.marginBottom = '30%';
 		btn.style.width = '150px';
 		btn.style.height = '27px';
 		btn.style.fontSize = '11px';
