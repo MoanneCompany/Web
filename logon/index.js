@@ -14,12 +14,14 @@ $(document).ready(function () {
 	var errorPass = document.getElementById("error_pass");
 	var img = document.getElementById("head");
 	var h = document.getElementById('h');
+	var body = document.getSelection('body');
 	var userIn = false;
 	var passIn = false;
 	var password = 0;
 	var lang;
 
 	if (!mobile_check()) {
+		body.style.alignItems = ''
 		user.style.width = '300px';
 		user.style.height = '30px';
 		user.style.fontSize = '13px';
@@ -32,7 +34,6 @@ $(document).ready(function () {
 		start.style.fontSize = '12px';
 		text.style.fontSize = '9px';
 		h.style.marginTop = '0';
-		h.style.marginBottom = '30%';
 		btn.style.width = '150px';
 		btn.style.height = '27px';
 		btn.style.fontSize = '11px';
