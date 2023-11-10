@@ -31,7 +31,7 @@ $(document).ready(function () {
 		moanne.style.fontSize = '19px';
 		start.style.fontSize = '12px';
 		text.style.fontSize = '9px';
-		h.style.margin = '0';
+		h.style.margin = '0px';
 		btn.style.width = '150px';
 		btn.style.height = '27px';
 		btn.style.fontSize = '11px';
@@ -39,7 +39,7 @@ $(document).ready(function () {
 		errorPass.style.fontSize = '9px';
 		errorUser.style.fontSize = '9px';
 		errorPass.style.transform = 'translateX(35px)';
-		errorUser.style.transform = 'translatex(35px)';
+		errorUser.style.transform = 'translateX(35px)';
 		text.style.transform = 'translateY(50px)';
 	}
 
