@@ -23,7 +23,7 @@ $(document).ready(function () {
 	if (!mobile_check()) {
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
-		h.style.marginLeft = '50%';
+		h.style.marginLeft = '50px';
 		user.style.width = '300px';
 		user.style.height = '30px';
 		user.style.fontSize = '13px';
