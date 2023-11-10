@@ -24,6 +24,7 @@ $(document).ready(function () {
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
 		h.style.left = '50px';
+		h.style.top = '50px';
 		user.style.width = '300px';
 		user.style.height = '30px';
 		user.style.fontSize = '13px';
