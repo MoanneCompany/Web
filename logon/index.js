@@ -14,7 +14,7 @@ $(document).ready(function () {
 	var errorPass = document.getElementById("error_pass");
 	var img = document.getElementById("head");
 	var h = document.getElementById('h');
-	var body = document.querySelector('#body');
+	var body = document.querySelector('body');
 	var userIn = false;
 	var passIn = false;
 	var password = 0;
