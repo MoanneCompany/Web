@@ -4,6 +4,7 @@ const User = require('./models/Users');
 const dados = null;
 var user = document.getElementById("user");
 var pass = document.getElementById("pass");
+const userOn = false;
 
 $(document).ready(function () {
 	var text = document.getElementById("text2");
@@ -17,7 +18,6 @@ $(document).ready(function () {
 	var body = document.querySelector('body');
 	var userIn = false;
 	var passIn = false;
-	var password = 0;
 	var lang;
 
 	if (!mobile_check()) {
@@ -132,68 +132,10 @@ $(document).ready(function () {
 		moanne.innerHTML = "모아네";
 	}
 
-	btn.addEventListener("click", async function () {
-		if (user.value === "" && pass.value === "") {
-			errorUser.style.visibility = "visible";
-			errorPass.style.visibility = "visible";
-			userIn = true;
-			passIn = true;
-			if (lang === "pt") {
-				errorUser.innerHTML = "Preencha este campo.";
-				errorPass.innerHTML = "Preencha este campo.";
-			} else if (lang === "es") {
-				errorUser.innerHTML = "Complete este campo.";
-				errorPass.innerHTML = "Complete este campo.";
-			} else if (lang === "fr") {
-				errorUser.innerHTML = "Remplissez ce champ.";
-				errorPass.innerHTML = "Remplissez ce champ.";
-			} else if (lang === "de") {
-				errorUser.innerHTML = "Füllen Sie dieses Feld aus.";
-				errorPass.innerHTML = "Füllen Sie dieses Feld aus.";
-			} else if (lang === "it") {
-				errorUser.innerHTML = "Compila questo campo.";
-				errorPass.innerHTML = "Compila questo campo.";
-			} else if (lang === "ja") {
-				errorUser.innerHTML = "このフィールドに入力します。";
-				errorPass.innerHTML = "このフィールドに入力します。";
-			} else if (navigator.language === "zh-cn") {
-				errorUser.innerHTML = "填写此字段。";
-				errorPass.innerHTML = "填写此字段。";
-			} else if (navigator.language === "zh-tw") {
-				errorUser.innerHTML = "填寫此欄位。";
-				errorPass.innerHTML = "填寫此欄位。";
-			} else if (lang === "ko") {
-				errorUser.innerHTML = "이 필드를 작성하세요.";
-				errorPass.innerHTML = "이 필드를 작성하세요.";
-			} else {
-				errorUser.innerHTML = "Fill in this field.";
-				errorPass.innerHTML = "Fill in this field.";
-			}
-		} else if (pass.value === "") {
-			errorPass.style.visibility = "visible";
-			passIn = true;
-			if (lang === "pt") {
-				errorPass.innerHTML = "Preencha este campo.";
-			} else if (lang === "es") {
-				errorPass.innerHTML = "Complete este campo.";
-			} else if (lang === "fr") {
-				errorPass.innerHTML = "Remplissez ce champ.";
-			} else if (lang === "de") {
-				errorPass.innerHTML = "Füllen Sie dieses Feld aus.";
-			} else if (lang === "it") {
-				errorPass.innerHTML = "Compila questo campo.";
-			} else if (lang === "ja") {
-				errorPass.innerHTML = "このフィールドに入力します。";
-			} else if (navigator.language === "zh-cn") {
-				errorPass.innerHTML = "填写此字段。";
-			} else if (navigator.language === "zh-tw") {
-				errorPass.innerHTML = "填寫此欄位。";
-			} else if (lang === "ko") {
-				errorPass.innerHTML = "이 필드를 작성하세요.";
-			} else {
-				errorPass.innerHTML = "Fill in this field.";
-			}
-		} else if (user.value === "") {
+	btn.addEventListener("click", async function (){
+		
+			
+		if (user.value === "") {
 			errorUser.style.visibility = "visible";
 			userIn = true;
 			if (lang === "pt") {
@@ -219,7 +161,96 @@ $(document).ready(function () {
 				errorUser.innerHTML = "Fill in this field.";
 			}
 		} else {
-			fetchData();
+			userOn = true;
+			if (pass.value === "") {
+				errorPass.style.visibility = "visible";
+				passIn = true;
+				if (lang === "pt") {
+					errorPass.innerHTML = "Preencha este campo.";
+				} else if (lang === "es") {
+					errorPass.innerHTML = "Complete este campo.";
+				} else if (lang === "fr") {
+					errorPass.innerHTML = "Remplissez ce champ.";
+				} else if (lang === "de") {
+					errorPass.innerHTML = "Füllen Sie dieses Feld aus.";
+				} else if (lang === "it") {
+					errorPass.innerHTML = "Compila questo campo.";
+				} else if (lang === "ja") {
+					errorPass.innerHTML = "このフィールドに入力します。";
+				} else if (navigator.language === "zh-cn") {
+					errorPass.innerHTML = "填写此字段。";
+				} else if (navigator.language === "zh-tw") {
+					errorPass.innerHTML = "填寫此欄位。";
+				} else if (lang === "ko") {
+					errorPass.innerHTML = "이 필드를 작성하세요.";
+				} else {
+					errorPass.innerHTML = "Fill in this field.";
+				}
+			} else {
+				if (user.value === "" && pass.value === "") {
+					errorUser.style.visibility = "visible";
+					errorPass.style.visibility = "visible";
+					userIn = true;
+					passIn = true;
+					if (lang === "pt") {
+						errorUser.innerHTML = "Preencha este campo.";
+						errorPass.innerHTML = "Preencha este campo.";
+					} else if (lang === "es") {
+						errorUser.innerHTML = "Complete este campo.";
+						errorPass.innerHTML = "Complete este campo.";
+					} else if (lang === "fr") {
+						errorUser.innerHTML = "Remplissez ce champ.";
+						errorPass.innerHTML = "Remplissez ce champ.";
+					} else if (lang === "de") {
+						errorUser.innerHTML = "Füllen Sie dieses Feld aus.";
+						errorPass.innerHTML = "Füllen Sie dieses Feld aus.";
+					} else if (lang === "it") {
+						errorUser.innerHTML = "Compila questo campo.";
+						errorPass.innerHTML = "Compila questo campo.";
+					} else if (lang === "ja") {
+						errorUser.innerHTML = "このフィールドに入力します。";
+						errorPass.innerHTML = "このフィールドに入力します。";
+					} else if (navigator.language === "zh-cn") {
+						errorUser.innerHTML = "填写此字段。";
+						errorPass.innerHTML = "填写此字段。";
+					} else if (navigator.language === "zh-tw") {
+						errorUser.innerHTML = "填寫此欄位。";
+						errorPass.innerHTML = "填寫此欄位。";
+					} else if (lang === "ko") {
+						errorUser.innerHTML = "이 필드를 작성하세요.";
+						errorPass.innerHTML = "이 필드를 작성하세요.";
+					} else {
+						errorUser.innerHTML = "Fill in this field.";
+						errorPass.innerHTML = "Fill in this field.";
+					}
+				} else {
+					errorUser.style.visibility = "visible";
+					userIn = true;
+					if (lang === "pt") {
+						errorUser.innerHTML = "Preencha este campo.";
+
+					} else if (lang === "es") {
+						errorUser.innerHTML = "Complete este campo.";
+					} else if (lang === "fr") {
+						errorUser.innerHTML = "Remplissez ce champ.";
+					} else if (lang === "de") {
+						errorUser.innerHTML = "Füllen Sie dieses Feld aus.";
+					} else if (lang === "it") {
+						errorUser.innerHTML = "Compila questo campo.";
+					} else if (lang === "ja") {
+						errorUser.innerHTML = "このフィールドに入力します。";
+					} else if (navigator.language === "zh-cn") {
+						errorUser.innerHTML = "填写此字段。";
+					} else if (navigator.language === "zh-tw") {
+						errorUser.innerHTML = "填寫此欄位。";
+					} else if (lang === "ko") {
+						errorUser.innerHTML = "이 필드를 작성하세요.";
+					} else {
+						errorUser.innerHTML = "Fill in this field.";
+					}
+				}
+
+			}
 		}
 	});
 
