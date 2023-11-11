@@ -1,11 +1,11 @@
 @font-face {
     font-family: poppins;
-    src: url('Poppins-Thin.ttf');
+    src: url('/web/Poppins-Thin.ttf');
 }
 
 @font-face {
-    font-family: poppins_bold;
-    src: url('Poppins-Bold.ttf');
+    font-family: poppins_extrabold;
+    src: url('/web/Poppins-ExtraBold.ttf');
 }
 
 body {
@@ -22,4 +22,10 @@ body {
 #img {
     width: 150px;
     height: 150px;
+}
+
+#txt {
+    font-family: poppins_extrabold;
+    font-weight: normal;
+    color: white;
 }
