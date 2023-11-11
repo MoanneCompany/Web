@@ -20,10 +20,9 @@ $(document).ready(function () {
 	var passIn = false;
 	var lang;
 
-	if (!mobile_check()) {
+	if (mobile_check() === false) {
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
-		body.style.backgroundColor = '#111111';
 		h.style.marginLeft = '50px';
 		h.style.marginTop = '50px';
 		user.style.width = '300px';
