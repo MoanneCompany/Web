@@ -13,8 +13,10 @@ body {
 }
 
 .head {
-	position: relative;
-	display: flex;
+    position: relative;
+    display: flex;
+    left: 30px;
+	top: 30px;
 }
 
 #img {
