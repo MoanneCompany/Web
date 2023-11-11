@@ -59,7 +59,7 @@ $(document).ready(function () {
 		text.style.width = "240px";
 		text.style.marginLeft = "19%";
 		start.innerHTML = "Comece agora";
-		btn.innerHTML = "Enviar";
+		btn.innerHTML = "Próximo";
 		user.setAttribute("placeholder", "Usuário");
 		pass.setAttribute("placeholder", "Senha");
 	} else if (lang === "es") {
@@ -67,7 +67,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "17%";
 		start.innerHTML = "Empezar ahora";
-		btn.innerHTML = "Entregar";
+		btn.innerHTML = "Próximo";
 		user.setAttribute("placeholder", "Usuario");
 		pass.setAttribute("placeholder", "Contraseña");
 	} else if (lang === "fr") {
@@ -75,7 +75,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "16%";
 		start.innerHTML = "Commencez maintenant";
-		btn.innerHTML = "Soumettre";
+		btn.innerHTML = "Suivant";
 		user.setAttribute("placeholder", "Utilisateur");
 		pass.setAttribute("placeholder", "Mot de passe");
 	} else if (lang === "de") {
@@ -83,7 +83,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "16.5%";
 		start.innerHTML = "Jetzt anfangen";
-		btn.innerHTML = "Einreichen";
+		btn.innerHTML = "Nächste";
 		user.setAttribute("placeholder", "Benutzer");
 		pass.setAttribute("placeholder", "Passwort");
 	} else if (lang === "it") {
@@ -91,7 +91,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "16.5%";
 		start.innerHTML = "Parti ora";
-		btn.innerHTML = "Invia";
+		btn.innerHTML = "Prossimo";
 		user.setAttribute("placeholder", "Utente");
 		pass.setAttribute("placeholder", "Parola d'ordine");
 	} else if (lang === "ja") {
@@ -99,7 +99,7 @@ $(document).ready(function () {
 		text.style.width = "260px";
 		text.style.marginLeft = "17%";
 		start.innerHTML = "今すぐ始めましょう";
-		btn.innerHTML = "提出する";
+		btn.innerHTML = "次";
 		user.setAttribute("placeholder", "ユーザー");
 		pass.setAttribute("placeholder", "パスワード");
 		moanne.innerHTML = "モアネー";
@@ -108,7 +108,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "18%";
 		start.innerHTML = "现在开始";
-		btn.innerHTML = "提交";
+		btn.innerHTML = "下一个";
 		user.setAttribute("placeholder", "用户");
 		pass.setAttribute("placeholder", "密码");
 		moanne.innerHTML = "莫安";
@@ -117,7 +117,7 @@ $(document).ready(function () {
 		text.style.width = "270px";
 		text.style.marginLeft = "18%";
 		start.innerHTML = "現在開始";
-		btn.innerHTML = "提交";
+		btn.innerHTML = "下一個";
 		user.setAttribute("placeholder", "使用者");
 		pass.setAttribute("placeholder", "密碼");
 		moanne.innerHTML = "莫安";
@@ -126,11 +126,20 @@ $(document).ready(function () {
 		text.style.width = "220px";
 		text.style.marginLeft = "22%";
 		start.innerHTML = "지금 시작하세요";
-		btn.innerHTML = "제출하다";
+		btn.innerHTML = "다음";
 		user.setAttribute("placeholder", "사용자");
 		pass.setAttribute("placeholder", "비밀번호");
 		moanne.innerHTML = "모아네";
-	}
+	} else if (lang === "ru") {
+                text.innerHTML = "После входа в систему ваша учетная запись останется сохраненной на этом устройстве.";
+		text.style.width = "220px";
+		text.style.marginLeft = "22%";
+		start.innerHTML = "Начать сейчас";
+		btn.innerHTML = "Следующий";
+		user.setAttribute("placeholder", "Пользователь");
+		pass.setAttribute("placeholder", "Пароль");
+		moanne.innerHTML = "Моанн";
+        }
 
 	btn.addEventListener("click", async function (){
 		
@@ -156,7 +165,9 @@ $(document).ready(function () {
 			} else if (navigator.language === "zh-tw") {
 				errorUser.innerHTML = "填寫此欄位。";
 			} else if (lang === "ko") {
-				errorUser.innerHTML = "이 필드를 작성하세요.";
+			        errorUser.innerHTML = "이 필드를 작성하세요.";
+			} else if (lang === "ru") {
+				errorUser.innerHTML = "Заполните это поле.";
 			} else {
 				errorUser.innerHTML = "Fill in this field.";
 			}
@@ -183,7 +194,9 @@ $(document).ready(function () {
 					errorPass.innerHTML = "填寫此欄位。";
 				} else if (lang === "ko") {
 					errorPass.innerHTML = "이 필드를 작성하세요.";
-				} else {
+				} else if (lang === "ru") {
+				errorPass.innerHTML = "Заполните это поле.";
+			        } else {
 					errorPass.innerHTML = "Fill in this field.";
 				}
 			} else {
@@ -219,7 +232,10 @@ $(document).ready(function () {
 					} else if (lang === "ko") {
 						errorUser.innerHTML = "이 필드를 작성하세요.";
 						errorPass.innerHTML = "이 필드를 작성하세요.";
-					} else {
+					} else if (lang === "ru") {
+				errorUser.innerHTML = "Заполните это поле.";
+						errorPass.innerHTML = "Заполните это поле.";
+			               } else {
 						errorUser.innerHTML = "Fill in this field.";
 						errorPass.innerHTML = "Fill in this field.";
 					}
@@ -245,6 +261,8 @@ $(document).ready(function () {
 						errorUser.innerHTML = "填寫此欄位。";
 					} else if (lang === "ko") {
 						errorUser.innerHTML = "이 필드를 작성하세요.";
+					} else if (lang === "ru") {
+                                                errorUser.innerHTML = "Заполните это поле.";
 					} else {
 						errorUser.innerHTML = "Fill in this field.";
 					}
