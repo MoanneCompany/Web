@@ -12,7 +12,16 @@ if ($conn->connect_error) {
 }
 
 if (isset($_GET['usuario'])) {
-    $variavel = $_GET['usuario'];
+    $user = $_GET['usuario'];
+
+    $sql = "SELECT * FROM users WHERE name = '$user'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo "true";
+    } else {
+        echo "false";
+    }
 } else {
     echo "No var";
 }
