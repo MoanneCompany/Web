@@ -173,7 +173,27 @@
 
 </body>
 <script>
-	alert("oi");
+
+	document.addEventListener('DOMContentLoaded', function() {
+
+	});
+
+	function getLang() {
+		var lang;
+		if (navigator.language.includes("-")) {
+			lang = navigator.language.split("-")[0];
+		} else {
+			lang = navigator.language;
+		}
+
+		if (navigator.language === 'zh-cn') {
+			lang = 'zh-cn';
+		} else if (navigator.language === 'zh-tw') {
+			lang = 'zh-tw';
+		}
+
+		return lang;
+	};
 </script>
 
 </html>
