@@ -182,6 +182,7 @@
 		const erroruser = document.getElementById('error_user');
 		const errorpass = document.getElementById('error_pass');
 		const btn = document.getElementById('submit');
+		const text = document.getElementById('text2');
 
 		var lang = getLang();
 
@@ -191,6 +192,7 @@
 			user.setAttribute('placeholder', 'Usuário');
 			pass.setAttribute('placeholder', 'Senha');
 			btn.innerHTML = 'Próximo';
+			text.innerHTML = 'Uma vez logada, sua conta permanecerá salva neste dispositivo.';
 		}
 	});
 
