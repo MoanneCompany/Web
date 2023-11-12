@@ -2,11 +2,13 @@ const mysql = require("mysql2");
 const User = require('./models/Users');
 
 const dados = null;
-var user = document.getElementById("user");
-var pass = document.getElementById("pass");
+var user;
+var pass;
 const userOn = false;
 
 $(document).ready(function () {
+	user = document.getElementById("user");
+	pass = document.getElementById("pass");
 	var text = document.getElementById("text2");
 	var start = document.getElementById("text");
 	var btn = document.getElementById("submit");
