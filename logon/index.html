@@ -186,6 +186,7 @@
 		const body = document.querySelector('body');
 		const head = document.getElementById('h');
 
+		var userOn = false;
 		var lang = getLang();
 
 		if (lang === 'pt') {
@@ -205,6 +206,10 @@
 			head.style.margin = '0';
 			head.style.marginTop = '5%';
 		}
+
+		btn.addEventListener('click', function() {
+			alert('clicked');
+		});
 	});
 
 	function getLang() {
