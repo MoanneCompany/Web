@@ -24,31 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	if (!mobile_check()) {
 		alert("pc");
-		body.style.alignItems = 'top';
-		body.style.justifyContent = 'top';
-		h.style.marginLeft = '50px';
-		h.style.marginTop = '50px';
-		user.style.width = '300px';
-		user.style.height = '30px';
-		user.style.fontSize = '13px';
-		pass.style.fontSize = '13px';
-		pass.style.width = '300px';
-		pass.style.height = '30px';
-		img.style.width = '85px';
-		img.style.height = '85px';
-		moanne.style.fontSize = '19px';
-		start.style.fontSize = '12px';
-		text.style.fontSize = '9px';
-		h.style.marginTop = '0';
-		btn.style.width = '150px';
-		btn.style.height = '27px';
-		btn.style.fontSize = '11px';
-		btn.style.borderWidth = '1.5px';
-		errorPass.style.fontSize = '9px';
-		errorUser.style.fontSize = '9px';
-		errorPass.style.transform = 'translateX(35px)';
-		errorUser.style.transform = 'translateX(35px)';
-		text.style.transform = 'translateY(50px)';
+		
 	}
 
 	if (navigator.language.includes("-")) {
