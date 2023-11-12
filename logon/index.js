@@ -5,6 +5,7 @@ const dados = null;
 var user;
 var pass;
 const userOn = false;
+alert("teste");
 
 document.addEventListener('DOMContentLoaded', function() {
 	user = document.getElementById("user");
