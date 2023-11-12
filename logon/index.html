@@ -183,6 +183,7 @@
 		const errorpass = document.getElementById('error_pass');
 		const btn = document.getElementById('submit');
 		const text = document.getElementById('text2');
+		const body = document.querySelector('body');
 
 		var lang = getLang();
 
@@ -196,7 +197,8 @@
 		}
 
 		if (!detectar_mobile()) {
-			alert('pc');
+			body.style.alignItems = 'top';
+			body.style.justifyContent = 'top';
 		}
 	});
 
