@@ -175,10 +175,22 @@
 <script>
 
 	document.addEventListener('DOMContentLoaded', function() {
+		const moanne = document.getElementById('moanne');
+		const startnow = document.getElementById('text');
+		const user = document.getElementById('user');
+		const pass = document.getElementById('pass');
+		const erroruser = document.getElementById('error_user');
+		const errorpass = document.getElementById('error_pass');
+		const btn = document.getElementById('submit');
+
 		var lang = getLang();
 
 		if (lang === 'pt') {
-			alert("pt");
+			document.title = 'Comece na Moanne';
+			startnow.innerHTML = 'Comece agora';
+			user.setAttribute('placeholder', 'Usuário');
+			pass.setAttribute('placeholder', 'Senha');
+			btn.innerHTML = 'Próximo';
 		}
 	});
 
