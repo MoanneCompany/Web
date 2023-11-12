@@ -7,7 +7,7 @@ var pass;
 const userOn = false;
 alert("teste");
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	user = document.getElementById("user");
 	pass = document.getElementById("pass");
 	var text = document.getElementById("text2");
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var userIn = false;
 	var passIn = false;
 	var lang;
-	
+
 	if (navigator.language.includes("-")) {
 		lang = navigator.language.split("-")[0];
 	} else {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		pass.setAttribute("placeholder", "비밀번호");
 		moanne.innerHTML = "모아네";
 	} else if (lang === "ru") {
-                text.innerHTML = "После входа в систему ваша учетная запись останется сохраненной на этом устройстве.";
+		text.innerHTML = "После входа в систему ваша учетная запись останется сохраненной на этом устройстве.";
 		text.style.width = "220px";
 		text.style.marginLeft = "22%";
 		start.innerHTML = "Начать сейчас";
@@ -114,11 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		user.setAttribute("placeholder", "Пользователь");
 		pass.setAttribute("placeholder", "Пароль");
 		moanne.innerHTML = "Моанн";
-        }
+	}
 
-	btn.addEventListener("click", async function (){
-		
-			
+	btn.addEventListener("click", async function () {
+
+
 		if (user.value === "") {
 			errorUser.style.visibility = "visible";
 			userIn = true;
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			} else if (navigator.language === "zh-tw") {
 				errorUser.innerHTML = "填寫此欄位。";
 			} else if (lang === "ko") {
-			        errorUser.innerHTML = "이 필드를 작성하세요.";
+				errorUser.innerHTML = "이 필드를 작성하세요.";
 			} else if (lang === "ru") {
 				errorUser.innerHTML = "Заполните это поле.";
 			} else {
@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				} else if (lang === "ko") {
 					errorPass.innerHTML = "이 필드를 작성하세요.";
 				} else if (lang === "ru") {
-				errorPass.innerHTML = "Заполните это поле.";
-			        } else {
+					errorPass.innerHTML = "Заполните это поле.";
+				} else {
 					errorPass.innerHTML = "Fill in this field.";
 				}
 			} else {
@@ -208,13 +208,13 @@ document.addEventListener('DOMContentLoaded', function() {
 						errorUser.innerHTML = "이 필드를 작성하세요.";
 						errorPass.innerHTML = "이 필드를 작성하세요.";
 					} else if (lang === "ru") {
-				errorUser.innerHTML = "Заполните это поле.";
+						errorUser.innerHTML = "Заполните это поле.";
 						errorPass.innerHTML = "Заполните это поле.";
-			               } else {
+					} else {
 						errorUser.innerHTML = "Fill in this field.";
 						errorPass.innerHTML = "Fill in this field.";
 					}
-				} else if (user.value === ""){
+				} else if (user.value === "") {
 					errorUser.style.visibility = "visible";
 					userIn = true;
 					if (lang === "pt") {
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					} else if (lang === "ko") {
 						errorUser.innerHTML = "이 필드를 작성하세요.";
 					} else if (lang === "ru") {
-                                                errorUser.innerHTML = "Заполните это поле.";
+						errorUser.innerHTML = "Заполните это поле.";
 					} else {
 						errorUser.innerHTML = "Fill in this field.";
 					}
@@ -295,7 +295,7 @@ async function fetchData() {
 		console.log('Conexão com o MySQL estabelecida com sucesso!');
 
 		const username = user.value;
-		
+
 		// Agora você pode executar consultas SQL e interagir com o banco de dados MySQL.
 	});
 
