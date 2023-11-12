@@ -6,8 +6,6 @@ var user;
 var pass;
 const userOn = false;
 
-alert("oi");
-
 document.addEventListener('DOMContentLoaded', function() {
 	user = document.getElementById("user");
 	pass = document.getElementById("pass");
