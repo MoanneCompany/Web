@@ -6,6 +6,8 @@ var user;
 var pass;
 const userOn = false;
 
+alert("oi");
+
 document.addEventListener('DOMContentLoaded', function() {
 	user = document.getElementById("user");
 	pass = document.getElementById("pass");
@@ -21,12 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var userIn = false;
 	var passIn = false;
 	var lang;
-
 	
-		alert("pc");
-		
-	
-
 	if (navigator.language.includes("-")) {
 		lang = navigator.language.split("-")[0];
 	} else {
