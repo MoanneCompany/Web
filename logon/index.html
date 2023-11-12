@@ -215,7 +215,7 @@
 					erroruser.style.visibility = 'visible';
 				} else {
 					senddatatophp(user.value);
-					alert(getPHP());
+					alert(getPHP);
 				}
 			}
 		});
@@ -232,18 +232,6 @@
 		};
 
 		xmlhttp.open("GET", "mysql.php?usuario=" + usuario, true);
-		xmlhttp.send();
-	}
-
-	function getPHP() {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				return this.responseText;
-			}
-		};
-
-		xmlhttp.open("GET", "mysql.php", true);
 		xmlhttp.send();
 	}
 

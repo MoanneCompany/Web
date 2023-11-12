@@ -18,9 +18,9 @@ if (isset($_GET['usuario'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "true";
+        echo "<script>var getPHP = true</script>";
     } else {
-        echo "false";
+        echo "<script>var getPHP = false</script>";
     }
 
     $conn->close();
