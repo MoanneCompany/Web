@@ -173,18 +173,19 @@
 
 </body>
 <script>
+	const moanne = document.getElementById('moanne');
+	const startnow = document.getElementById('text');
+	const user = document.getElementById('user');
+	const pass = document.getElementById('pass');
+	const erroruser = document.getElementById('error_user');
+	const errorpass = document.getElementById('error_pass');
+	const btn = document.getElementById('submit');
+	const text = document.getElementById('text2');
+	const body = document.querySelector('body');
+	const head = document.getElementById('h');
 
 	document.addEventListener('DOMContentLoaded', function () {
-		const moanne = document.getElementById('moanne');
-		const startnow = document.getElementById('text');
-		const user = document.getElementById('user');
-		const pass = document.getElementById('pass');
-		const erroruser = document.getElementById('error_user');
-		const errorpass = document.getElementById('error_pass');
-		const btn = document.getElementById('submit');
-		const text = document.getElementById('text2');
-		const body = document.querySelector('body');
-		const head = document.getElementById('h');
+
 
 		var userOn = false;
 		var lang = getLang();
@@ -198,6 +199,7 @@
 			text.innerHTML = 'Uma vez logada, sua conta permanecerá salva neste dispositivo.';
 			text.style.width = '230px'
 			text.style.marginLeft = '20%';
+			erroruser.innerHTML = 'Preencha este campo.'
 		}
 
 		if (!detectar_mobile()) {
@@ -207,10 +209,24 @@
 			head.style.marginTop = '5%';
 		}
 
-		btn.addEventListener('click', function() {
-			alert('clicked');
+		btn.addEventListener('click', function () {
+			if (!userOn) {
+				if (user.value === '') {
+					erroruser.style.visibility = 'visible';
+				}
+			}
 		});
 	});
+
+	function inputs() {
+		user.addEventListener('input', function(){
+			erroruser.style.visibility = 'visible';
+		});
+
+		pass.addEventListener('input', function(){
+			errorpass.style.visibility = 'visible';
+		});
+	}
 
 	function getLang() {
 		var lang;
