@@ -25,7 +25,8 @@ if (isset($_GET['usuario'])) {
 
     $conn->close();
 } else {
-    echo "No var";
+    $var = "no var";
+    echo "<script>var getPHP = '$var'</script>";
 }
 
 ?>
