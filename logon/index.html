@@ -239,6 +239,10 @@
 		.then(response => response.text)
 		.then(data => {
 			alert(data);
+
+			if (data === "true") {
+				alert("true");
+			}
 		}).catch(error => alert("erro: " + error));
 	}
 
