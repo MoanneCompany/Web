@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var lang;
 
 	if (mobile_check()) {
+		console.log("mobile");
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
 		h.style.marginLeft = '50px';
