@@ -22,6 +22,8 @@ if (isset($_GET['usuario'])) {
     } else {
         echo "false";
     }
+
+    $conn->close();
 } else {
     echo "No var";
 }
