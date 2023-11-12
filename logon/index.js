@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	var passIn = false;
 	var lang;
 
-	if (mobile_check()) {
-		console.log("mobile");
+	if (!mobile_check()) {
+		console.log("pc");
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
 		h.style.marginLeft = '50px';
