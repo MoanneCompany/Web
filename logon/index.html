@@ -235,15 +235,15 @@
 	}
 
 	function getPHP() {
-		fetch('mysql.php')
-		.then(response => response.text)
-		.then(data => {
-			alert(data);
-
-			if (data === "true") {
-				alert("true");
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				alert(this.responseText);
 			}
-		}).catch(error => alert("erro: " + error));
+		};
+
+		xmlhttp.open("GET", "mysql.php", true);
+		xmlhttp.send();
 	}
 
 	function inputs() {
