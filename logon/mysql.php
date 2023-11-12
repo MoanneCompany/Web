@@ -11,6 +11,10 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-$user = ''
+if (isset($_GET['usuario'])) {
+    $variavel = $_GET['usuario'];
+} else {
+    echo "No var";
+}
 
 ?>
