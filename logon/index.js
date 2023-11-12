@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var passIn = false;
 	var lang;
 
-	if (!mobile_check()) {
+	if (mobile_check()) {
 		alert("pc");
 		
 	}
