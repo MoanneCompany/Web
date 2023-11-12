@@ -20,7 +20,7 @@ $(document).ready(function () {
 	var passIn = false;
 	var lang;
 
-	/*if (mobile_check() === false) {
+	if (mobile_check()) {
 		body.style.alignItems = 'top';
 		body.style.justifyContent = 'top';
 		h.style.marginLeft = '50px';
@@ -46,7 +46,7 @@ $(document).ready(function () {
 		errorPass.style.transform = 'translateX(35px)';
 		errorUser.style.transform = 'translateX(35px)';
 		text.style.transform = 'translateY(50px)';
-	}*/
+	}
 
 	if (navigator.language.includes("-")) {
 		lang = navigator.language.split("-")[0];
