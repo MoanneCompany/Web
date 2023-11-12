@@ -20,12 +20,13 @@ body {
 }
 
 #img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }
 
 #txt {
     font-family: poppins_extrabold;
     font-weight: normal;
     color: white;
+    font-size: 60px;
 }
