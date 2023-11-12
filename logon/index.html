@@ -184,6 +184,7 @@
 		const btn = document.getElementById('submit');
 		const text = document.getElementById('text2');
 		const body = document.querySelector('body');
+		const head = document.getElementById('h');
 
 		var lang = getLang();
 
@@ -199,6 +200,8 @@
 		if (!detectar_mobile()) {
 			body.style.alignItems = 'top';
 			body.style.justifyContent = 'top';
+			head.style.alignItems = 'top';
+			head.style.justifyContent = 'top';
 		}
 	});
 
