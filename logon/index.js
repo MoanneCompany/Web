@@ -6,7 +6,7 @@ var user;
 var pass;
 const userOn = false;
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
 	user = document.getElementById("user");
 	pass = document.getElementById("pass");
 	var text = document.getElementById("text2");
