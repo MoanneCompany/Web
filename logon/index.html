@@ -175,7 +175,11 @@
 <script>
 
 	document.addEventListener('DOMContentLoaded', function() {
+		var lang = getLang();
 
+		if (lang === 'pt') {
+			alert("pt");
+		}
 	});
 
 	function getLang() {
