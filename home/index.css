@@ -29,4 +29,5 @@ body {
     font-weight: normal;
     color: white;
     font-size: 60px;
+    transform: translateY(-20px);
 }
