@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	var passIn = false;
 	var lang;
 
-	if (mobile_check()) {
+	
 		alert("pc");
 		
-	}
+	
 
 	if (navigator.language.includes("-")) {
 		lang = navigator.language.split("-")[0];
