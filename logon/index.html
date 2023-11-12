@@ -214,13 +214,25 @@
 				if (user.value === '') {
 					erroruser.style.visibility = 'visible';
 				} else {
-
+					senddatatophp(user.value);
 				}
 			}
 		});
 
 		inputs();
 	});
+
+	function senddatatophp(usuario) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				alert(this.responseText);
+			}
+		};
+
+		xmlhttp.open("GET", "mysql.php?usuario=" + usuario, true);
+		xmlhttp.send();
+	}
 
 	function getPHP() {
 		fetch('mysql.php')
