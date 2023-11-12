@@ -174,7 +174,7 @@
 </body>
 <script>
 
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener('DOMContentLoaded', function () {
 		const moanne = document.getElementById('moanne');
 		const startnow = document.getElementById('text');
 		const user = document.getElementById('user');
@@ -194,6 +194,10 @@
 			btn.innerHTML = 'Próximo';
 			text.innerHTML = 'Uma vez logada, sua conta permanecerá salva neste dispositivo.';
 		}
+
+		if (!detectar_mobile()) {
+			alert('pc');
+		}
 	});
 
 	function getLang() {
@@ -211,7 +215,23 @@
 		}
 
 		return lang;
-	};
+	}
+
+	function detectar_mobile() {
+		if (navigator.userAgent.match(/Android/i)
+			|| navigator.userAgent.match(/webOS/i)
+			|| navigator.userAgent.match(/iPhone/i)
+			|| navigator.userAgent.match(/iPad/i)
+			|| navigator.userAgent.match(/iPod/i)
+			|| navigator.userAgent.match(/BlackBerry/i)
+			|| navigator.userAgent.match(/Windows Phone/i)
+		) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} 
 </script>
 
 </html>
