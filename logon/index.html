@@ -183,7 +183,7 @@
 		const body = document.querySelector('body');
 		const head = document.getElementById('h');
 
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 
 
 			var userOn = false;
@@ -208,7 +208,7 @@
 				head.style.marginTop = '5%';
 			}
 
-			btn.addEventListener('click', function() {
+			btn.addEventListener('click', function () {
 				if (!userOn) {
 					if (user.value === '') {
 						erroruser.style.visibility = 'visible';
@@ -223,7 +223,7 @@
 
 		function senddatatophp(usuario) {
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
+			xmlhttp.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
 					console.log(this.responseText);
 				}
@@ -233,12 +233,27 @@
 			xmlhttp.send();
 		}
 
+		function getData() {
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', 'mysql.php', true);
+
+			xhr.onload = function () {
+				if (xhr.status == 200) {
+					var dados = xhr.responseText;
+					alert(dados.res);
+				}
+			};
+
+			xhr.send();
+		}
+
 		function inputs() {
-			user.addEventListener('input', function() {
+			user.addEventListener('input', function () {
 				erroruser.style.visibility = 'hidden';
 			});
 
-			pass.addEventListener('input', function() {
+			pass.addEventListener('input', function () {
 				errorpass.style.visibility = 'hidden';
 			});
 		}
@@ -274,21 +289,6 @@
 				return false;
 			}
 		}
-	</script>
-
-	<script>
-		var xhr = new XMLHttpRequest();
-		
-		xhr.open('GET', 'mysql.php', true);
-
-		xhr.onload = function() {
-			if (xhr.status == 200) {
-				var dados = xhr.responseText;
-				alert(dados.res);
-			}
-		};
-
-		xhr.send();
 	</script>
 
 </body>
