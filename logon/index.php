@@ -175,11 +175,12 @@
 
 		$sql = "SELECT * FROM users WHERE name = '$user'";
 		$result = $conn->query($sql);
+		$true;
 
 		if ($result->num_rows > 0) {
-			echo "<script>var getPHP = true</script>";
+			$true = "true";
 		} else {
-			echo "<script>var getPHP = false</script>";
+			$true = "false";
 		}
 
 		$conn->close();
