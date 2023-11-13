@@ -289,12 +289,14 @@
 		echo $conn->connect_error;
 	}
 
+	$var;
+	$true;
+
 	if (isset($_GET['usuario'])) {
 		$user = $_GET['usuario'];
 
 		$sql = "SELECT * FROM users WHERE name = '$user'";
 		$result = $conn->query($sql);
-		$true;
 
 		if ($result->num_rows > 0) {
 			$true = "true";
@@ -305,10 +307,20 @@
 		$conn->close();
 	} else {
 		$var = "no var";
-		echo "<script>var getPHP = '$var'</script>";
 	}
 
 	?>
+
+	<script>
+		var verdadeiro = "<?php echo $true; ?>";
+		var novar = "<?php echo $var; ?>";
+
+		if (verdadeiro === "true") {
+			alert("existe");
+		} else if (verdadeiro === "false"){
+			alert("não existe");
+		}
+	</script>
 
 </body>
 
