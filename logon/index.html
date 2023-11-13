@@ -277,6 +277,20 @@
 	</script>
 
 	<script>
+		var xhr = new XMLHttpRequest();
+		
+		xhr.open('GET', 'mysql.php', true);
+
+		xhr.onload = function() {
+			if (xhr.status == 200) {
+				var dados = xhr.responseText;
+			}
+		};
+
+		xhr.send();
+	</script>
+
+	<script>
 		var verdadeiro = "<?php echo $true; ?>";
 		var novar = "<?php echo $var; ?>";
 
