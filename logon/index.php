@@ -157,6 +157,125 @@
 </head>
 
 <body>
+	<div id="h">
+		<img id="head" src="/web/white-ic.png">
+		<h1 id="moanne">Moanne</h1>
+		<h1 id="text">Start now</h1>
+		<div id="log">
+			<input placeholder="User" id="user" type="text">
+			<h6 id="error_user">teste</h6>
+			<input placeholder="Password" id="pass" type="password">
+			<h6 id="error_pass">teste</h6>
+			<button id="submit">Next</button>
+		</div>
+		<h4 id="text2">Once logged in, your account will remain saved on that device.</h4>
+	</div>
+
+	<script>
+		const moanne = document.getElementById('moanne');
+		const startnow = document.getElementById('text');
+		const user = document.getElementById('user');
+		const pass = document.getElementById('pass');
+		const erroruser = document.getElementById('error_user');
+		const errorpass = document.getElementById('error_pass');
+		const btn = document.getElementById('submit');
+		const text = document.getElementById('text2');
+		const body = document.querySelector('body');
+		const head = document.getElementById('h');
+
+		document.addEventListener('DOMContentLoaded', function() {
+
+
+			var userOn = false;
+			var lang = getLang();
+
+			if (lang === 'pt') {
+				document.title = 'Comece na Moanne';
+				startnow.innerHTML = 'Comece agora';
+				user.setAttribute('placeholder', 'Usuário');
+				pass.setAttribute('placeholder', 'Senha');
+				btn.innerHTML = 'Próximo';
+				text.innerHTML = 'Uma vez logada, sua conta permanecerá salva neste dispositivo.';
+				text.style.width = '230px'
+				text.style.marginLeft = '20%';
+				erroruser.innerHTML = 'Preencha este campo.'
+			}
+
+			if (!detectar_mobile()) {
+				body.style.alignItems = 'top';
+				body.style.justifyContent = 'top';
+				head.style.margin = '0';
+				head.style.marginTop = '5%';
+			}
+
+			btn.addEventListener('click', function() {
+				if (!userOn) {
+					if (user.value === '') {
+						erroruser.style.visibility = 'visible';
+					} else {
+						senddatatophp(user.value);
+					}
+				}
+			});
+
+			inputs();
+		});
+
+		function senddatatophp(usuario) {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log(this.responseText);
+				}
+			};
+
+			xmlhttp.open("GET", "usuario=" + usuario, true);
+			xmlhttp.send();
+		}
+
+		function inputs() {
+			user.addEventListener('input', function() {
+				erroruser.style.visibility = 'hidden';
+			});
+
+			pass.addEventListener('input', function() {
+				errorpass.style.visibility = 'hidden';
+			});
+		}
+
+		function getLang() {
+			var lang;
+			if (navigator.language.includes("-")) {
+				lang = navigator.language.split("-")[0];
+			} else {
+				lang = navigator.language;
+			}
+
+			if (navigator.language === 'zh-cn') {
+				lang = 'zh-cn';
+			} else if (navigator.language === 'zh-tw') {
+				lang = 'zh-tw';
+			}
+
+			return lang;
+		}
+
+		function detectar_mobile() {
+			if (navigator.userAgent.match(/Android/i) ||
+				navigator.userAgent.match(/webOS/i) ||
+				navigator.userAgent.match(/iPhone/i) ||
+				navigator.userAgent.match(/iPad/i) ||
+				navigator.userAgent.match(/iPod/i) ||
+				navigator.userAgent.match(/BlackBerry/i) ||
+				navigator.userAgent.match(/Windows Phone/i)
+			) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
 	<?php
 
 	$servername = "localhost";
@@ -191,125 +310,7 @@
 
 	?>
 
-	<div id="h">
-		<img id="head" src="/web/white-ic.png">
-		<h1 id="moanne">Moanne</h1>
-		<h1 id="text">Start now</h1>
-		<div id="log">
-			<input placeholder="User" id="user" type="text">
-			<h6 id="error_user">teste</h6>
-			<input placeholder="Password" id="pass" type="password">
-			<h6 id="error_pass">teste</h6>
-			<button id="submit">Next</button>
-		</div>
-		<h4 id="text2">Once logged in, your account will remain saved on that device.</h4>
-	</div>
-
 </body>
-<script>
-	const moanne = document.getElementById('moanne');
-	const startnow = document.getElementById('text');
-	const user = document.getElementById('user');
-	const pass = document.getElementById('pass');
-	const erroruser = document.getElementById('error_user');
-	const errorpass = document.getElementById('error_pass');
-	const btn = document.getElementById('submit');
-	const text = document.getElementById('text2');
-	const body = document.querySelector('body');
-	const head = document.getElementById('h');
 
-	document.addEventListener('DOMContentLoaded', function() {
-
-
-		var userOn = false;
-		var lang = getLang();
-
-		if (lang === 'pt') {
-			document.title = 'Comece na Moanne';
-			startnow.innerHTML = 'Comece agora';
-			user.setAttribute('placeholder', 'Usuário');
-			pass.setAttribute('placeholder', 'Senha');
-			btn.innerHTML = 'Próximo';
-			text.innerHTML = 'Uma vez logada, sua conta permanecerá salva neste dispositivo.';
-			text.style.width = '230px'
-			text.style.marginLeft = '20%';
-			erroruser.innerHTML = 'Preencha este campo.'
-		}
-
-		if (!detectar_mobile()) {
-			body.style.alignItems = 'top';
-			body.style.justifyContent = 'top';
-			head.style.margin = '0';
-			head.style.marginTop = '5%';
-		}
-
-		btn.addEventListener('click', function() {
-			if (!userOn) {
-				if (user.value === '') {
-					erroruser.style.visibility = 'visible';
-				} else {
-					senddatatophp(user.value);
-					alert(getPHP);
-				}
-			}
-		});
-
-		inputs();
-	});
-
-	function senddatatophp(usuario) {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				console.log(this.responseText);
-			}
-		};
-
-		xmlhttp.open("GET", "mysql.php?usuario=" + usuario, true);
-		xmlhttp.send();
-	}
-
-	function inputs() {
-		user.addEventListener('input', function() {
-			erroruser.style.visibility = 'hidden';
-		});
-
-		pass.addEventListener('input', function() {
-			errorpass.style.visibility = 'hidden';
-		});
-	}
-
-	function getLang() {
-		var lang;
-		if (navigator.language.includes("-")) {
-			lang = navigator.language.split("-")[0];
-		} else {
-			lang = navigator.language;
-		}
-
-		if (navigator.language === 'zh-cn') {
-			lang = 'zh-cn';
-		} else if (navigator.language === 'zh-tw') {
-			lang = 'zh-tw';
-		}
-
-		return lang;
-	}
-
-	function detectar_mobile() {
-		if (navigator.userAgent.match(/Android/i) ||
-			navigator.userAgent.match(/webOS/i) ||
-			navigator.userAgent.match(/iPhone/i) ||
-			navigator.userAgent.match(/iPad/i) ||
-			navigator.userAgent.match(/iPod/i) ||
-			navigator.userAgent.match(/BlackBerry/i) ||
-			navigator.userAgent.match(/Windows Phone/i)
-		) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-</script>
 
 </html>
