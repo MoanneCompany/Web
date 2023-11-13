@@ -6,9 +6,10 @@ $password = "Moanne1315114145031513161141425!!";
 $dbname = "moanne_users";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+$res = "none";
 
 if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    echo "Conexão falhou: " . $conn->connect_error;
 }
 
 if (isset($_GET['usuario'])) {
@@ -18,15 +19,16 @@ if (isset($_GET['usuario'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "<script>var getPHP = true</script>";
+        $res = "true";
     } else {
-        echo "<script>var getPHP = false</script>";
+        $res = "false";
     }
 
     $conn->close();
 } else {
-    $var = "no var";
-    echo "<script>var getPHP = '$var'</script>";
+    $res = "no var";
 }
+
+echo $res;
 
 ?>
