@@ -157,6 +157,39 @@
 </head>
 
 <body>
+	<?php
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "Moanne1315114145031513161141425!!";
+	$dbname = "moanne_users";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	if ($conn->connect_error) {
+		echo $conn->connect_error;
+	}
+
+	if (isset($_GET['usuario'])) {
+		$user = $_GET['usuario'];
+
+		$sql = "SELECT * FROM users WHERE name = '$user'";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+			echo "<script>var getPHP = true</script>";
+		} else {
+			echo "<script>var getPHP = false</script>";
+		}
+
+		$conn->close();
+	} else {
+		$var = "no var";
+		echo "<script>var getPHP = '$var'</script>";
+	}
+
+	?>
+
 	<div id="h">
 		<img id="head" src="/web/white-ic.png">
 		<h1 id="moanne">Moanne</h1>
@@ -184,7 +217,7 @@
 	const body = document.querySelector('body');
 	const head = document.getElementById('h');
 
-	document.addEventListener('DOMContentLoaded', function () {
+	document.addEventListener('DOMContentLoaded', function() {
 
 
 		var userOn = false;
@@ -209,7 +242,7 @@
 			head.style.marginTop = '5%';
 		}
 
-		btn.addEventListener('click', function () {
+		btn.addEventListener('click', function() {
 			if (!userOn) {
 				if (user.value === '') {
 					erroruser.style.visibility = 'visible';
@@ -236,11 +269,11 @@
 	}
 
 	function inputs() {
-		user.addEventListener('input', function(){
+		user.addEventListener('input', function() {
 			erroruser.style.visibility = 'hidden';
 		});
 
-		pass.addEventListener('input', function(){
+		pass.addEventListener('input', function() {
 			errorpass.style.visibility = 'hidden';
 		});
 	}
@@ -263,20 +296,19 @@
 	}
 
 	function detectar_mobile() {
-		if (navigator.userAgent.match(/Android/i)
-			|| navigator.userAgent.match(/webOS/i)
-			|| navigator.userAgent.match(/iPhone/i)
-			|| navigator.userAgent.match(/iPad/i)
-			|| navigator.userAgent.match(/iPod/i)
-			|| navigator.userAgent.match(/BlackBerry/i)
-			|| navigator.userAgent.match(/Windows Phone/i)
+		if (navigator.userAgent.match(/Android/i) ||
+			navigator.userAgent.match(/webOS/i) ||
+			navigator.userAgent.match(/iPhone/i) ||
+			navigator.userAgent.match(/iPad/i) ||
+			navigator.userAgent.match(/iPod/i) ||
+			navigator.userAgent.match(/BlackBerry/i) ||
+			navigator.userAgent.match(/Windows Phone/i)
 		) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
-	} 
+	}
 </script>
 
 </html>
