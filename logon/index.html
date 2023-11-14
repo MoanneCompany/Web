@@ -239,6 +239,7 @@
 			$.ajax({
 				url: 'mysql.php',
 				method: 'GET',
+				dataType: 'json',
 				success: function(response){
 					alert(response.mensagem);
 				},
