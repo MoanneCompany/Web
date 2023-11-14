@@ -241,7 +241,7 @@
 				method: 'GET',
 				dataType: 'json',
 				success: function(response){
-					alert(response.mensagem);
+					alert(JSON.stringify(response.mensagem));
 				},
 				error: function(err) {
 					alert(err);
