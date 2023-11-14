@@ -27,4 +27,5 @@ body {
 .head #search {
     font-family: poppins, sans-serif;
     font-size: 25px;
+    background-image: url('search-regular-240.png');
 }
