@@ -8,6 +8,11 @@
     src: url('Poppins-Bold.ttf');
 }
 
+@font-face {
+    font-family: poppins_semi;
+    src: url('Poppins-SemiBold.ttf');
+}
+
 body {
     background-color: #222;
     align-items: center;
@@ -18,6 +23,12 @@ body {
 
 }
 
+.head {
+    align-items: center;
+    align-content: center;
+    justify-self: center;
+}
+
 .head .img {
     background-image: url('black-ic.png');
     width: 40px;
@@ -25,6 +36,15 @@ body {
 }
 
 .head #search {
+    background-color: #ddd;
+    color: #222;
+    font-weight: normal;
+    font-family: poppins_semi, sans-serif;
+    width: 60%;
+    
+}
+
+.head #search_btn {
     width: 30px;
     height: 30px;
     background-image: url('search-regular-240.png');
