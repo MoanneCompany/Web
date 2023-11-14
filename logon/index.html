@@ -172,6 +172,8 @@
 	</div>
 
 	<script>
+		import $ from 'jquery';
+
 		const moanne = document.getElementById('moanne');
 		const startnow = document.getElementById('text');
 		const user = document.getElementById('user');
@@ -235,18 +237,16 @@
 		}
 
 		function getData() {
-			var xhr = new XMLHttpRequest();
-
-			xhr.open('GET', 'mysql.php', true);
-
-			xhr.onload = function () {
-				if (xhr.status == 200) {
-					var dados = xhr.responseText;
-					alert(dados);
+			$.ajax({
+				url: 'mysql.php',
+				method: 'GET',
+				success: function(response){
+					alert(response);
+				},
+				error: function(err) {
+					console.error(err);
 				}
-			};
-
-			xhr.send();
+			});
 		}
 
 		function inputs() {
