@@ -29,6 +29,6 @@ if (isset($_GET['usuario'])) {
     $res = "no var";
 }
 
-echo $res;
+echo json_encode(['mensagem' => $res]);
 
 ?>
