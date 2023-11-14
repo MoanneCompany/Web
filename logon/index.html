@@ -171,6 +171,7 @@
 		<h4 id="text2">Once logged in, your account will remain saved on that device.</h4>
 	</div>
 
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		const moanne = document.getElementById('moanne');
 		const startnow = document.getElementById('text');
@@ -235,7 +236,7 @@
 		}
 
 		function getData() {
-			jQuery.ajax({
+			$.ajax({
 				url: 'mysql.php',
 				method: 'GET',
 				success: function(response){
